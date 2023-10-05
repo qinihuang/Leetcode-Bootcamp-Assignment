@@ -1,0 +1,8 @@
+class Solution:
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        if len(set(nums)) != len(nums):
+            return True
+        else: 
+            return False
+# initially use for loop and count, but LTE happens when the nums length is large, therefore, we need to use hash set which provides a O(n) complexity
+  
