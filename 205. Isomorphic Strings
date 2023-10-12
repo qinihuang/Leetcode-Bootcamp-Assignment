@@ -1,0 +1,16 @@
+class Solution:
+    def isIsomorphic(self, s: str, t: str) -> bool:
+        ns, nt = len(s), len(t)
+        if ns != nt:
+            return False
+        match = dict()
+        for i in range(ns):
+            if s[i] not in match:
+                if t[i] not in match.values(): // 需要考虑到有可能换成的已经被用过
+                    match[s[i]] = t[i] 
+                else: 
+                    return False
+            else:
+                if t[i] != match[s[i]]:
+                    return False
+        return True
